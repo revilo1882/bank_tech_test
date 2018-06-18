@@ -9,4 +9,8 @@ class Balance
   def credit(amount)
     @total += amount
   end
+
+  def debit(amount)
+    @total -= amount
+  end
 end
