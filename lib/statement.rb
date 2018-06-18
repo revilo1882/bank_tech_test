@@ -7,6 +7,6 @@ class Statement
   end
 
   def add_transaction(total)
-      @transactions << { balance: total }
+    @transactions << { balance: total }
   end
 end
