@@ -10,9 +10,15 @@ describe Statement do
     end
   end
 
-  describe "#add_transaction" do
+  describe "#add_credit" do
     it 'adds a transaction to the hash' do
-      expect { statement.add_transaction(10) }.to change { statement.transactions.length }.by(1)
+      expect { statement.add_credit(10, 10) }.to change { statement.transactions.length }.by(1)
+    end
+  end
+
+  describe "#add_debit" do
+    it 'adds a transaction to the hash' do
+      expect { statement.add_debit(10, 10) }.to change { statement.transactions.length }.by(1)
     end
   end
 end

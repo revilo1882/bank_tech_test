@@ -9,17 +9,11 @@ class Balance
 
   def credit(amount)
     @total += amount
-    add_to_statement
+    @statement.add_credit(amount, @total)
   end
 
   def debit(amount)
     @total -= amount
-    add_to_statement
-  end
-
-  private
-
-  def add_to_statement
-    @statement.add_transaction(@total)
+    @statement.add_debit(amount, @total)
   end
 end

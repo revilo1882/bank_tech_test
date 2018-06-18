@@ -6,7 +6,13 @@ class Statement
     @transactions = []
   end
 
-  def add_transaction(total)
-    @transactions << { balance: total }
+  def add_credit(amount, total)
+    @transactions << { credit: amount, balance: total }
   end
+
+  def add_debit(amount, total)
+    @transactions << { debit: amount, balance: total }
+  end
+
+
 end
