@@ -1,5 +1,9 @@
 class Bank
 
+  def initialize(balance = Balance.new)
+    @balance = balance
+  end
+
   def deposit(amount)
     amount
   end

@@ -2,7 +2,8 @@ require 'bank'
 
 describe Bank do
 
-  let(:bank) { Bank.new }
+  let(:balance) { double :balance }
+  let(:bank) { Bank.new(balance) }
 
   describe '#deposit' do
     it 'returns the amount deposited' do

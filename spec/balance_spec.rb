@@ -4,8 +4,8 @@ describe Balance do
 
   let(:balance) { Balance.new }
 
-  describe '#total' do
-    it 'initializes with zero' do
+  describe '#initialize' do
+    it 'has a total of zero' do
       expect(balance.total).to eq(0)
     end
   end
