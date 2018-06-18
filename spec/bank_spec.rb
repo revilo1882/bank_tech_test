@@ -7,6 +7,7 @@ describe Bank do
 
   describe '#deposit' do
     it 'returns the amount deposited' do
+      allow(balance).to receive(:credit).and_return(10)
       expect(bank.deposit(10)).to eq(10)
     end
   end
