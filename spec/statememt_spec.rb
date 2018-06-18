@@ -21,4 +21,10 @@ describe Statement do
       expect { statement.add_debit(10, 10) }.to change { statement.transactions.length }.by(1)
     end
   end
+
+  describe '#print_transactions' do
+    it 'prints a blank statement' do
+      expect(statement.print_transactions).to eq("date || credt || debit || balance \n")
+    end
+  end
 end
