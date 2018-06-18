@@ -5,10 +5,10 @@ class Bank
   end
 
   def deposit(amount)
-    return @balance.credit(amount)
+    @balance.credit(amount)
   end
 
   def withdrawal(amount)
-    -amount
+    @balance.debit(amount)
   end
 end
