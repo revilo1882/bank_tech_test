@@ -7,14 +7,14 @@ class Balance
     @total = 0
   end
 
-  def credit(depsoit)
-    @total += depsoit
-    statement.add_transaction(depsoit, withdrawal = nil, total)
+  def credit(deposit)
+    @total += deposit
+    statement.add_transaction(deposit, nil, total)
   end
 
   def debit(withdrawal)
     @total -= withdrawal
-    statement.add_transaction(deposit = nil, withdrawal, total)
+    statement.add_transaction(nil, withdrawal, total)
   end
 
   def print_balance

@@ -18,12 +18,9 @@ class Statement
   private
 
   def convert_float(deposit, withdrawal, total)
-    if withdrawal == nil
-      @deposit = '%.2f' % deposit
-    else
-      @withdrawal = '%.2f' % withdrawal
-    end
     @total = '%.2f' % total
+    withdrawal.nil? ?
+    @deposit = '%.2f' % deposit : @withdrawal = '%.2f' % withdrawal
   end
 
   def push_transactions

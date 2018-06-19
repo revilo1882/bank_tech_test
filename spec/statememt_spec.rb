@@ -2,7 +2,7 @@ require 'statement'
 
 describe Statement do
 
-  let (:printer) { double :printer }
+  let(:printer) { double :printer }
   let(:statement) { Statement.new }
 
   describe '#initialize' do

@@ -3,7 +3,7 @@ require 'printer'
 describe Printer do
 
   date = Time.now.strftime('%d/%m/%y')
-  let(:transaction) { [ { date: date, credit: '%.2f' % 100, debit: nil ,balance: '%.2f' % 100 } ] }
+  let(:transaction) { [{ date: date, credit: '%.2f' % 100, debit: nil, balance: '%.2f' % 100 }] }
   let(:printer) { Printer.new }
 
   describe '#printing' do
