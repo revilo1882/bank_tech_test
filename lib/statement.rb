@@ -7,11 +7,11 @@ class Statement
   end
 
   def add_credit(amount, total)
-    @transactions << { date: Time.now.strftime('%d/%m/%y'), credit: amount, debit: nil, balance: total }
+    @transactions << { date: Time.now.strftime('%d/%m/%y'), credit: '%.2f' % amount, debit: nil, balance: '%.2f' % total }
   end
 
   def add_debit(amount, total)
-    @transactions << { date: Time.now.strftime('%d/%m/%y'), credit: nil, debit: amount, balance: total }
+    @transactions << { date: Time.now.strftime('%d/%m/%y'), credit: nil, debit: '%.2f' % amount, balance: '%.2f' % total }
   end
 
   def print_transactions
