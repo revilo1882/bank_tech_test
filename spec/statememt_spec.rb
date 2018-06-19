@@ -32,6 +32,6 @@ describe Statement do
       statement.add_credit(100, 100)
       statement.add_debit(10, 90)
       expect { statement.print_transactions }.to output("date || credit || debit || balance\n#{date} ||  || 10.00 || 90.00\n#{date} || 100.00 ||  || 100.00\n").to_stdout
-      end
+    end
   end
 end
