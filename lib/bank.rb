@@ -10,7 +10,7 @@ class Bank
     balance.credit(amount)
   end
 
-  def withdraw(amount)
+  def withdrawal(amount)
     balance.debit(amount)
   end
 
