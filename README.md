@@ -33,12 +33,12 @@ Domain model
 ```
     Bank                |     Balance             |  Statement
 ________________________|_________________________|____________________________
-  Balance.new           |    @total = 0           |    @transactions {}
-  Statement.new         |                         |
+  Balance.new           |    @total = 0           |    @transactions []
+                        |    Statement.new        |
 ________________________|_________________________|____________________________
   deposit(amount)   ----|---->credit(amount)  ----|----> add_transaction(credit
-  withdrawal(amount)----|----> debit(amount)  ----|----> ,debit, balance, date)
-  print_statement() ----|-------------------------|----> print_transactions()
+  withdraw(amount)  ----|----> debit(amount)  ----|----> ,debit, balance, date)
+  print_statement() ----|----print_balance()------|----> print_transactions()
 ________________________|_________________________|____________________________
         <--------------------------------------------------output
 ```
