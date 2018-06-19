@@ -11,5 +11,4 @@ describe Printer do
       expect { printer.printing(transaction) }.to output("date || credit || debit || balance\n#{date} || 100.00 ||  || 100.00\n").to_stdout
     end
   end
-
 end

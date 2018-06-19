@@ -6,9 +6,9 @@ class Statement
     @transactions = []
   end
 
-  def add_transaction(deposit, withdrawal, total)
+  def add_transaction(deposit, withdrawal, total, transaction = Transaction.new)
     convert_float(deposit, withdrawal, total)
-    push_transactions
+    @transactions << transaction.create(@deposit, @withdrawal, @total)
   end
 
   def print_transactions(printer = Printer.new)
@@ -21,20 +21,5 @@ class Statement
     @total = '%.2f' % total
     withdrawal.nil? ?
     @deposit = '%.2f' % deposit : @withdrawal = '%.2f' % withdrawal
-  end
-
-  def push_transactions
-    @transactions << {
-      date: Time.now.strftime('%d/%m/%y'),
-      credit: @deposit,
-      debit: @withdrawal,
-      balance: @total
-    }
-    clear_transactions
-  end
-
-  def clear_transactions
-    @deposit = nil
-    @withdrawal = nil
   end
 end

@@ -10,6 +10,4 @@ class Printer
     transactions.reverse_each { |t| puts "#{t.values.join(" || ")}" }
     transactions.pop
   end
-
-  
 end
