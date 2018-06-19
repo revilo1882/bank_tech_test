@@ -8,7 +8,11 @@ class Bank
     @balance.credit(amount)
   end
 
-  def withdrawal(amount)
+  def withdraw(amount)
     @balance.debit(amount)
+  end
+
+  def print_statement
+    @balance.print_balance
   end
 end

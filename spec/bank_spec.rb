@@ -11,9 +11,9 @@ describe Bank do
     end
   end
 
-  describe '#withdrawal' do
+  describe '#withdraw' do
     it 'returns the negaitve amount withdrawn' do
-      expect(bank.withdrawal(10)).to eq(10)
+      expect(bank.withdraw(10)).to eq(10)
     end
   end
 end

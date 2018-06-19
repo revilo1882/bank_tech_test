@@ -16,4 +16,8 @@ class Balance
     @total -= amount
     @statement.add_debit(amount, @total)
   end
+
+  def print_balance
+    @statement.print_transactions
+  end
 end
