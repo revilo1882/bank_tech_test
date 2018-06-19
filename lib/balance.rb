@@ -4,7 +4,7 @@ class Balance
 
   def initialize(statement = Statement.new)
     @statement = statement
-    @total = 0.00
+    @total = 0
   end
 
   def credit(amount)
