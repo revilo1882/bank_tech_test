@@ -8,18 +8,11 @@ class Statement
 
   def add_transaction(deposit, withdrawal, total)
     convert_float(deposit, withdrawal, total)
-    @transactions << {
-      date: Time.now.strftime('%d/%m/%y'),
-      credit: @deposit,
-      debit: @withdrawal,
-      balance: @total
-    }
+    push_transactions
   end
 
-  def print_transactions
-    add_title
-    @transactions.reverse_each { |t| puts "#{t.values.join(" || ")}" }
-    @transactions.pop
+  def print_transactions(printer = Printer.new)
+    printer.printing(transactions)
   end
 
   private
@@ -27,20 +20,24 @@ class Statement
   def convert_float(deposit, withdrawal, total)
     if withdrawal == nil
       @deposit = '%.2f' % deposit
-      @withdrawl = nil
     else
       @withdrawal = '%.2f' % withdrawal
-      @deposit = nil
     end
     @total = '%.2f' % total
   end
 
-  def add_title
+  def push_transactions
     @transactions << {
-      date: "date",
-      credit: "credit",
-      debit: "debit",
-      balance: "balance"
+      date: Time.now.strftime('%d/%m/%y'),
+      credit: @deposit,
+      debit: @withdrawal,
+      balance: @total
     }
+    clear_transactions
+  end
+
+  def clear_transactions
+    @deposit = nil
+    @withdrawal = nil
   end
 end
