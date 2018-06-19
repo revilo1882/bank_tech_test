@@ -42,3 +42,47 @@ ________________________|_________________________|____________________________
 ________________________|_________________________|____________________________
         <--------------------------------------------------output
 ```
+
+Code example
+
+```
+[1] pry(main)> bank = Bank.new
+=> #<Bank:0x00007ffe0034b290
+ @balance=
+  #<Balance:0x00007ffe0034b268
+   @statement=#<Statement:0x00007ffe0034b240 @transactions=[]>,
+   @total=0.0>>
+[2] pry(main)> bank.deposit(1000)
+=> [{:date=>"19/06/18",
+  :credit=>"1000.00",
+  :debit=>nil,
+  :balance=>"1000.00"}]
+[3] pry(main)> bank.deposit(2000)
+=> [{:date=>"19/06/18",
+  :credit=>"1000.00",
+  :debit=>nil,
+  :balance=>"1000.00"},
+ {:date=>"19/06/18",
+  :credit=>"2000.00",
+  :debit=>nil,
+  :balance=>"3000.00"}]
+[4] pry(main)> bank.withdraw(500)
+=> [{:date=>"19/06/18",
+  :credit=>"1000.00",
+  :debit=>nil,
+  :balance=>"1000.00"},
+ {:date=>"19/06/18",
+  :credit=>"2000.00",
+  :debit=>nil,
+  :balance=>"3000.00"},
+ {:date=>"19/06/18",
+  :credit=>nil,
+  :debit=>"500.00",
+  :balance=>"2500.00"}]
+[5] pry(main)> bank.print_statement
+date || credit || debit || balance
+19/06/18 ||  || 500.00 || 2500.00
+19/06/18 || 2000.00 ||  || 3000.00
+19/06/18 || 1000.00 ||  || 1000.00
+=> {:date=>"date", :credit=>"credit", :debit=>"debit", :balance=>"balance"}
+```
