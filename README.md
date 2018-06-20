@@ -36,6 +36,9 @@ After building this functionality I realised that the statement object was doing
 
 The whole project was build using a TDD approach and has 17 test all passing with 100% coverage.  Rubocop and a ruby linter were used as style guides.
 
+### Update
+I have now decided that the account object was redundant so decided the have the user interact with the Balance object.  This has now been renamed Account and the methods renamed so the functionality is the same.  As a result 3 tests were removed.
+
 ## User Stories
 
 ```
@@ -77,6 +80,24 @@ ________________________|_________________________|____________________________
   print_statement() ----|-------------------------|----> print_transactions()
 ________________________|_________________________|____________________________
         <--------------------------------------------------output
+```
+
+## Final Domain Model
+
+```
+    Account             |  Statement                  |   Transaction
+________________________|_____________________________|____________________
+  @total = 0            |    @transactions []         |   @date, @credit,
+  Statement.new         |                             |   @debit, @balance
+________________________|_____________________________|_______|____________
+  deposit(credit)   ----|----> add_transaction(deposit|       |
+  withdraw(debit)   ----|----> ,withdrawal, total,    |       |
+                        |      transaction)   <-------|-------|
+  print_statement() ----|----> print_transactions()   |
+________|_______________|_______________|_____________|____________________
+        |                               |
+        |----------Printer <------------|
+
 ```
 
 ## Instructions
