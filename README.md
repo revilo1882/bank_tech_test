@@ -36,7 +36,7 @@ After building this functionality I realised that the statement object was doing
 
 The whole project was build using a TDD approach and has 17 test all passing with 100% coverage.  Rubocop and a ruby linter were used as style guides.
 
-##User Stories
+## User Stories
 
 ```
 In order to put money into my bank account
@@ -64,7 +64,7 @@ I would like the dates of my deposits and withdrawals logged
 
 
 
-##Initial Domain Model
+## Initial Domain Model
 
 ```
     Account             |     Balance             |  Statement
@@ -79,7 +79,7 @@ ________________________|_________________________|____________________________
         <--------------------------------------------------output
 ```
 
-##Instructions
+## Instructions
 
 Clone this repo to your local machine
 ```
@@ -101,7 +101,7 @@ Play around in IRB to see the functionality
 $ irb -r ./lib/account.rb
 ```
 
-Code example
+## Code example
 
 ```
 account = Account.new
