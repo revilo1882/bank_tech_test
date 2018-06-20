@@ -2,26 +2,32 @@ require 'account'
 
 describe Account do
 
-  let(:balance) { double :balance }
-  let(:account) { Account.new(balance) }
+  let(:statement) { double :statement }
+  let(:account) { Account.new(statement) }
 
-  describe '#deposit' do
-    it 'returns the amount deposited' do
-      expect(balance).to receive(:credit).with(10)
-      account.deposit(10)
+  describe '#initialize' do
+    it 'has a total of zero' do
+      expect(account.total).to eq(0)
     end
   end
 
-  describe '#withdrawal' do
-    it 'returns the amount withdrawn' do
-      expect(balance).to receive(:debit).with(10)
-      account.withdrawal(10)
+  describe '#credit' do
+    it 'adds the amount to the total' do
+      allow(statement).to receive(:add_transaction)
+      expect { account.deposit(10) }.to change { account.total }.by(10)
     end
   end
 
-  describe '#print_statement' do
-    it 'prints a statement' do
-      expect(balance).to receive(:print_balance)
+  describe '#debit' do
+    it 'deducts the amount from the total' do
+      allow(statement).to receive(:add_transaction)
+      expect { account.withdrawal(10) }.to change { account.total }.by(-10)
+    end
+  end
+
+  describe '#print_balance' do
+    it 'prints a balance' do
+      expect(statement).to receive(:print_transactions)
       account.print_statement
     end
   end

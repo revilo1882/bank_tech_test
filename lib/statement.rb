@@ -1,5 +1,3 @@
-require_relative 'printer.rb'
-require_relative 'transaction.rb'
 
 class Statement
 
