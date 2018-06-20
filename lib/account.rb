@@ -1,4 +1,6 @@
-class Bank
+require_relative 'balance.rb'
+
+class Account
 
   attr_reader :balance
 

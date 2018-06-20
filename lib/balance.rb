@@ -1,3 +1,5 @@
+require_relative 'statement.rb'
+
 class Balance
 
   attr_reader :total, :statement

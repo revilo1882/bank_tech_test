@@ -1,3 +1,6 @@
+require_relative 'printer.rb'
+require_relative 'transaction.rb'
+
 class Statement
 
   attr_reader :transactions
@@ -6,8 +9,8 @@ class Statement
     @transactions = []
   end
 
-  def add_transaction(deposit, withdrawal, total)
-    @transactions << Transaction.new(deposit, withdrawal, total)
+  def add_transaction(deposit, withdrawal, total, transaction = Transaction)
+    @transactions << transaction.new(deposit, withdrawal, total)
   end
 
   def print_transactions(printer = Printer.new)
