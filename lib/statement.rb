@@ -1,6 +1,6 @@
 class Statement
 
-  attr_reader :transactions, :deposit, :withdrawal, :total
+  attr_reader :transactions
 
   def initialize
     @transactions = []
